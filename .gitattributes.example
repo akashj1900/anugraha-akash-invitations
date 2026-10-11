@@ -1,0 +1,2 @@
+# OPTIONAL: activate only after setting up Git LFS in your own repository.
+original-media/*.mp4 filter=lfs diff=lfs merge=lfs -text
