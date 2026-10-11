@@ -1,0 +1,13 @@
+# Base directory (editions/rudhra) is set in the Netlify UI; paths here are relative to it.
+[build]
+  command = "chmod +x scripts/cmd-guard.js && yarn install --frozen-lockfile && npx expo export --platform web --output-dir dist"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA fallback so routes like /owner load the app
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
