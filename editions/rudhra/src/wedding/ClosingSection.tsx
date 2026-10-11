@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { colors, fonts } from "@/src/theme";
-import { CLOSING, COUPLE, EVENTS, INVITATION_NAME } from "./data";
+import { CLOSING, EVENTS, INVITATION_NAME, PAIR_FIRST, PAIR_SECOND } from "./data";
 import { Seal } from "./Seal";
 import { useInvitationLayout } from "./useInvitationLayout";
 import { ClosingCompliments } from "./ClosingCompliments";
@@ -12,9 +12,9 @@ export function ClosingSection() {
   return <View testID="closing-section" style={[styles.closing, { paddingBottom: insets.bottom + 56, paddingLeft: insets.left + 24, paddingRight: insets.right + 24 }]}>
     <Text testID="closing-with-love" style={styles.eyebrow}>{CLOSING.eyebrow}</Text>
     <View testID="closing-couple-names" accessibilityLabel={INVITATION_NAME} style={styles.signature}>
-      <Text testID="closing-bride-name" style={[styles.name, { fontSize: nameSize, lineHeight: nameSize * 1.4 }]}>{COUPLE.bride.name}</Text>
+      <Text testID="closing-bride-name" style={[styles.name, { fontSize: nameSize, lineHeight: nameSize * 1.4 }]}>{PAIR_FIRST}</Text>
       <Text testID="closing-ampersand" style={styles.ampersand}>&amp;</Text>
-      <Text testID="closing-groom-name" style={[styles.name, { fontSize: nameSize, lineHeight: nameSize * 1.4 }]}>{COUPLE.groom.name}</Text>
+      <Text testID="closing-groom-name" style={[styles.name, { fontSize: nameSize, lineHeight: nameSize * 1.4 }]}>{PAIR_SECOND}</Text>
     </View>
     <View style={styles.divider} />
     {EVENTS.map((event) => <View key={event.id} testID={`closing-${event.id}-summary`} style={styles.event}>

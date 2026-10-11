@@ -1,11 +1,15 @@
 // Approved invitation details. All displayed event context comes from here.
-import { CLOSING_NAME } from './edition';
+import { CLOSING_NAME, GROOM_FIRST } from './edition';
 export const COUPLE = {
   bride: { label: "The Bride", name: "Anugraha", tagline: "Grace in every step" },
   groom: { label: "The Groom", name: "Akash", tagline: "Joy in every beat" },
 };
 
-export const INVITATION_NAME = `${COUPLE.bride.name} & ${COUPLE.groom.name}`;
+// Edition-aware order for the paired name (both first names shown together).
+export const PAIR_FIRST = GROOM_FIRST ? COUPLE.groom.name : COUPLE.bride.name;
+export const PAIR_SECOND = GROOM_FIRST ? COUPLE.bride.name : COUPLE.groom.name;
+
+export const INVITATION_NAME = `${PAIR_FIRST} & ${PAIR_SECOND}`;
 export const MONOGRAM = "A ∞ A";
 
 const mapsSearch = (venue: string, address: string) =>
@@ -49,8 +53,8 @@ export const WEDDING_DATE_ISO = MARRIAGE.startISO;
 
 export const HERO = {
   dateLocation: `${MARRIAGE.shortDate} · ${MARRIAGE.city}`,
-  brideName: COUPLE.bride.name,
-  groomName: COUPLE.groom.name,
+  brideName: PAIR_FIRST,
+  groomName: PAIR_SECOND,
   joiner: "&",
   subtitle: "Two souls · Seven vows · One forever",
   scrollHint: "Scroll to unfold our celebration",
