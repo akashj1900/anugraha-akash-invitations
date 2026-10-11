@@ -1,0 +1,9 @@
+[build]
+  command = "chmod +x scripts/cmd-guard.js && yarn install --frozen-lockfile && npx expo export --platform web --output-dir dist"
+  publish = "dist"
+
+# SPA fallback so client-side routes like /owner load the app
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
