@@ -1,0 +1,3 @@
+[build]
+  command = "chmod +x scripts/cmd-guard.js && yarn install --frozen-lockfile && npx expo export --platform web --output-dir dist"
+  publish = "dist"
